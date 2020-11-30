@@ -7,7 +7,8 @@ import {
     Typography,
     Dialog,
     IconButton,
-    OutlinedInput
+    OutlinedInput,
+    Hidden, DialogActions, Button
 } from "@material-ui/core";
 
 import CloseIcon from '@material-ui/icons/Close';
@@ -91,6 +92,14 @@ const ModalCalendar = React.memo(() => {
                     />
                 </Box >
             </div >
+            <DialogActions>
+                <Button onClick={handleClose} color="primary">
+                    Cancel
+                </Button>
+                <Button onClick={handleClose} color="primary">
+                    Subscribe
+                </Button>
+            </DialogActions>
         </Dialog >
     );
 });
