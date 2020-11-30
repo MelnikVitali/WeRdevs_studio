@@ -10,14 +10,15 @@ import {
     AppBar,
     Drawer,
     ListItemIcon,
-    ListItemText, Typography
+    ListItemText,
+    Typography
 } from '@material-ui/core';
 
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 
-import logo from '../../assets/Logo.jpg';
+import logo from '../../assets/Logo.svg';
 
 import useStyles from './styles';
 
@@ -37,6 +38,7 @@ const NavBar = (props) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
+
         setDrawerOpen(open);
     };
 
@@ -95,7 +97,7 @@ const NavBar = (props) => {
                                 aria-label="open drawer"
                                 onClick={toggleDrawer(true)}
                             >
-                                <MenuIcon className={classes.menuButton} />
+                                <MenuIcon />
                             </IconButton >
                         </Hidden >
                         <Hidden xsDown >

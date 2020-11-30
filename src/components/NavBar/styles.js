@@ -3,36 +3,59 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(theme => ({
     appBar: {
         boxShadow: 'none',
-        flexGrow: 1,
-
+        maxWidth: 1920,
+        minWidth: 320,
+        [theme.breakpoints.up("xs")]: {
+            height: '12vh',
+            minHeight: '12vh',
+            padding: '0 25px 0 10px',
+        },
+        [theme.breakpoints.up("sm")]: {
+            height: '15vh',
+            minHeight: '15vh',
+            padding: '0 55px 0 45px',
+        },
+        [theme.breakpoints.up("md")]: {
+            height: '17vh',
+            minHeight: '17vh',
+            padding: '0 80px 0 70px',
+        },
+        [theme.breakpoints.up("lg")]: {
+            height: '19vh',
+            minHeight: '19vh',
+            padding: '0 86px 0 76px',
+        },
+        [theme.breakpoints.up("xl")]: {
+            height: '22vh',
+            minHeight: '22vh',
+            padding: '0 110px 0 100px',
+        },
     },
     toolbar: {
-        height: 80,
         width: '100%',
-        padding: '0 30px',
+        padding: 0,
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom:8,
-        [theme.breakpoints.up("sm")]: {
-            height: 110,
-            padding: '0 75px',
-            marginBottom: 16,
-        },
-        [theme.breakpoints.up("md")]: {
-            height: 150,
-            padding: '0 110px',
-            marginBottom: 22
-        },
-
     },
     logoLink: {
         flexGrow: 1,
     },
     logo: {
-        width: 126,
+        [theme.breakpoints.up("xs")]: {
+            height: 62
+        },
+        [theme.breakpoints.up("sm")]: {
+            height: 62
+        },
         [theme.breakpoints.up("md")]: {
-            width: '165px',
+            height: 63
+        },
+        [theme.breakpoints.up("lg")]: {
+            height: 63
+        },
+        [theme.breakpoints.up("xl")]: {
+            height: 78
         },
     },
     drawerList: {
@@ -40,6 +63,7 @@ const useStyles = makeStyles(theme => ({
     },
     navList: {
         display: 'flex',
+        padding: '51px 0'
     },
     navLinks: {
         position: 'relative',
@@ -49,16 +73,12 @@ const useStyles = makeStyles(theme => ({
         height: '100%',
         whiteSpace: 'nowrap',
         padding: 0,
-        marginLeft: '70px',
+        marginLeft: 56,
         color: theme.palette.primary.contrastText,
         fontSize: '28px',
         fontWeight: 500,
         textTransform: 'uppercase',
         letterSpacing: '0.56px',
-        '&:hover': {
-            backgroundColor: 'transparent !important',
-            color: theme.palette.primary.main
-        },
         "&:first-child": {
             marginLeft: '20px',
         },
@@ -75,12 +95,9 @@ const useStyles = makeStyles(theme => ({
             width: '14px',
             height: '14px',
             borderRadius: '7px',
-            backgroundColor: '#fdd000'
+            backgroundColor: theme.palette.primary.main,
         }
     },
-    menuButton: {
-        fontSize: 26
-    }
 }));
 
 export default useStyles;
