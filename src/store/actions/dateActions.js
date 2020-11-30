@@ -19,5 +19,3 @@ export const setSelectedDatesArray = (selected) => ({
     type: actions.SET_SELECTED_DATES_ARRAY,
     payload: selected
 });
-
-

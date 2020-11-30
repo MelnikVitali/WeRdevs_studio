@@ -4,14 +4,18 @@ import indigo from '@material-ui/core/colors/indigo';
 const useStyles = makeStyles(theme => {
     return ({
         root: {
+            overflow: 'unset',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
             height: '100%',
-            // padding: '209px 105px 209px 122px',
+            boxSizing: 'border-box',
             backgroundColor: theme.palette.secondary.main,
-            color: theme.palette.secondary.contrastText
+            fontSize: 14,
+            fontWeight: 400,
+            letterSpacing: 0,
+            color: theme.palette.subtitleTextGray.main
         },
         calendar: {
             display: 'flex',
@@ -20,24 +24,29 @@ const useStyles = makeStyles(theme => {
             justifyContent: 'center',
             width: '100%',
             maxWidth: 467,
-            minHeight: 491,
-            // height: '90%'
+            margin: '3% 10%',
+            color: theme.palette.subtitleTextGray
         },
         calendarHeader: {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            width: '92%',
-            // margin: '0 7px',
+            width: '93%',
             backgroundColor: theme.palette.secondary.main,
-            // borderBottom: `1px solid ${ theme.palette.secondary.contrastText }`,
         },
         headerText: {
-            fontSize: '18px',
+            fontSize: 15,
             textTransform: 'uppercase',
             letterSpacing: '1.2px',
             wordSpacing: '8px',
-            color: "#fff !important"
+        },
+        headerTile: {
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            textAlign: 'center',
+            overflow: 'hidden',
+            fontSize: 15,
         },
         headerIcon: {
             color: theme.palette.secondary.contrastText,
@@ -46,72 +55,53 @@ const useStyles = makeStyles(theme => {
         gridList: {
             width: '100%',
             height: '100%',
-            margin: '40px 0 !important',
+            margin: '10px !important',
             backgroundColor: theme.palette.secondary.main,
-            color: theme.palette.secondary.contrastText
         },
-        gridHeaderTile: {},
         gridTile: {
-            // background: '#ede7f6',
             display: 'flex',
             position: 'relative',
-            color: theme.palette.secondary.contrastText,
             textAlign: 'center',
             justifyContent: 'center !important',
-            '&&:selected': {
-                background: indigo[200]
-            }
+
         },
-        gridDays:{
+        gridDays: {
             display: 'flex',
-            justifyContent:'space-between'
+            justifyContent: 'space-between'
         },
         selected: {
-            // backgroundColor: 'red',
-            color: '#fdd000 !important',
+            color: `${theme.palette.primary.main}`,
             '&::before': {
                 position: 'absolute',
-                top: '100%',
-                bottom: 0,
-                left: '50%',
-                right: 0,
-                transform: 'translate(-50%, -50%)',
+                top: '78%',
+                left: 'calc(50% - 3px)',
                 content: '""',
                 display: 'block',
                 width: '6px',
                 height: '6px',
                 borderRadius: '3px',
-                backgroundColor: '#fdd000'
+                backgroundColor: theme.palette.primary.main,
             },
         },
         today: {
-            background: '#FDD000',
-            color: '#3D3D3D'
+            background: theme.palette.primary.main,
+            color: theme.palette.primary.contrastText
+        },
+        'today selected': {
+            color: theme.palette.primary.contrastText,
         },
         paper: {
             display: 'flex',
-            padding: '7px',
+            padding: 11,
             justifyContent: 'center',
             textAlign: 'center',
-            color: theme.palette.secondary.contrastText,
-            fontWeight: 500,
+            fontWeight: 400,
             '&:hover': {
                 background: indigo[100]
             },
-
-            cursor: 'pointer'
-        },
-        headerTile: {
-            width: '100%',
-            padding: '12px 0',
-            overflow: 'hidden',
-            color: theme.palette.primary.contrastText,
-            fontSize: '20px',
-            // borderBottom: `1px solid ${ theme.palette.secondary.contrastText }`,
-            // borderTop: `1px solid ${ theme.palette.secondary.contrastText }`,
+            cursor: 'pointer',
         },
         disabled: {
-            // background: '#f9f9f9',
             color: theme.palette.disabledDate.main,
             fontWeight: 500,
             '&:hover': {
@@ -120,8 +110,11 @@ const useStyles = makeStyles(theme => {
         },
         line: {
             width: '90%',
-            height: 1,
-            backgroundColor: 'white'
+            backgroundColor: theme.palette.disabledDate.main,
+            margin: '8px 0'
+        },
+        colorArrow: {
+            color: theme.palette.subtitleTextGray.main
         }
     });
 });

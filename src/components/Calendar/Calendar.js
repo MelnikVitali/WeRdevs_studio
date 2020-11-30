@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import clsx from 'clsx';
 
 import {
     addMonths,
@@ -42,7 +41,6 @@ const Calendar = () => {
 
     const toPreviousMonth = () => {
         dispatch(setPrevMonth(subMonths(currentDate, 1)));
-
     };
 
     const toNextMonth = () => {
@@ -77,7 +75,7 @@ const Calendar = () => {
                         className={ classes.headerIcon }
                         onClick={ toPreviousMonth }
                     >
-                        <KeyboardArrowLeftIcon fontSize="large" />
+                        <KeyboardArrowLeftIcon className={classes.colorArrow}/>
                     </IconButton>
                     <Typography variant="h5" className={ classes.headerText }>
                         { format(currentDate, dateFormat) }
@@ -87,23 +85,20 @@ const Calendar = () => {
                         className={ classes.headerIcon }
                         onClick={ toNextMonth }
                     >
-                        <KeyboardArrowRightIcon fontSize="large" />
+                        <KeyboardArrowRightIcon className={classes.colorArrow}/>
                     </IconButton>
 
                 </header>
                 <Divider className={classes.line}/>
-
-                {/*<CalendarGrid date={date} />*/ }
                 <GridList
                     key="calendar"
-                    cellHeight={ 30 }
+                    cellHeight={ 38 }
                     cols={ 7 }
                     spacing={ 0 }
                     className={ classes.gridList }
                 >
                     { getTiles(currentDate).map(week =>
                         week.map(tile => (
-
                             <GridListTile
                                 key={ tile.id }
                                 className={ classes.gridTile }
@@ -123,17 +118,18 @@ const Calendar = () => {
                         ))
                     ) }
                 </GridList>
+
                 <Divider className={classes.line}/>
+
                 <GridList
                     key="calendar-header"
                     cellHeight={ 40 }
                     cols={ 7 }
                     className={ classes.headerTile }
                 >
-
                     { daysArr.map((day, index) => (
-                        <GridListTile key={ index } className={ classes.paper }>
-                            <Typography variant="h6" className={ clsx(classes.paper) }>
+                        <GridListTile key={ index }>
+                            <Typography >
                                 { day }
                             </Typography>
                         </GridListTile>

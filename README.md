@@ -1,3 +1,19 @@
+# WeRdevs.studio - test task
+
+https://werdevs-task.herokuapp.com/
+
+Author: Vitalii Melnyk
+
+## Technology Stack
+
+- React with React Hooks and Redux with Redux Hooks 
+
+- React styles & libraries: Material-UI
+
+- Calendar built with React and date-fns
+
+-------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

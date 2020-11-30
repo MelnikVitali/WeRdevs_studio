@@ -34,9 +34,6 @@ export default (state = initialState, action) => {
                 selectedDatesArray: action.payload
             }
 
-
-
-
         default:
             return state;
     }

@@ -1,17 +1,24 @@
 import React from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import { useDispatch, useSelector } from 'react-redux';
+import { format } from "date-fns";
+
+import {
+    Box,
+    Typography,
+    Dialog,
+    IconButton,
+    OutlinedInput
+} from "@material-ui/core";
+
+import CloseIcon from '@material-ui/icons/Close';
+
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 
-import useStyles from './styles';
-import { useDispatch, useSelector } from 'react-redux';
 import { toggleModal } from '../../store/actions/toggleModalActions';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import { format } from "date-fns";
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
 import { setSelectedDate, setSelectedDatesArray } from '../../store/actions/dateActions';
+
+import useStyles from './styles';
 
 const ModalCalendar = React.memo(() => {
     const classes = useStyles();
@@ -25,17 +32,11 @@ const ModalCalendar = React.memo(() => {
     const selectedDate = useSelector(store => store.dateReducer.selectedDate);
     const selectedDatesArray = useSelector(store => store.dateReducer.selectedDatesArray);
 
-    console.log('selectedDate', selectedDate);
-
-    // const handleClickOpen = () => {
-    //     dispatch(toggleModal(true));
-    // };
-
     const handleClose = () => {
         dispatch(toggleModal(false));
     };
 
-    const handleClickCloseByButton = (selectedDate) =>{
+    const handleClickCloseByButton = (selectedDate) => {
         const newArraySelectedDates = selectedDatesArray.filter(item => {
             return item !== selectedDate;
         });
@@ -44,46 +45,53 @@ const ModalCalendar = React.memo(() => {
         dispatch(setSelectedDatesArray(newArraySelectedDates));
 
         dispatch(toggleModal(false));
-
     };
 
     return (
-        <div>
-            <Dialog
-                fullScreen={fullScreen}
-                open={isOpenModal}
-                onClose={handleClose}
-                aria-labelledby="responsive-dialog-title"
+        <Dialog
+            fullScreen={fullScreen}
+            open={isOpenModal}
+            onClose={handleClose}
+            aria-labelledby="responsive-dialog-title"
+            className={classes.root}
+        >
+            <IconButton
+                aria-label="close"
+                className={classes.closeButton}
+                onClick={() => handleClickCloseByButton(selectedDate)}
             >
-                <DialogTitle id="responsive-dialog-title">{"Use Google's location service?"}</DialogTitle>
-                <IconButton aria-label="close" className={classes.closeButton} onClick={() => handleClickCloseByButton(selectedDate)}>
-                    <CloseIcon />
-                </IconButton>
-                    <div style={{display: 'flex', justifyContent: 'space-around', marginBottom:'20px'}}>
-                        <OutlinedInput
-                            id="outlined-adornment-weight1"
-                            defaultValue={ format(new Date(selectedDate), 'MMMM')}
-                            aria-describedby="outlined-weight-helper-text"
-                            inputProps={{
-                                'aria-label': 'weight',
-                            }}
-                            labelWidth={0}
-                        />
-                        <label>Day
-                        <OutlinedInput
-                            id="outlined-adornment-weight2"
-                            defaultValue={ format(new Date(selectedDate), 'do iiii')}
-                            aria-describedby="outlined-weight-helper-text"
-                            inputProps={{
-                                'aria-label': 'weight',
-                            }}
-                            labelWidth={0}
-                        />
-                        </label>
-                    </div>
-
-            </Dialog>
-        </div>
+                <CloseIcon className={classes.closeIcon} />
+            </IconButton >
+            <div className={classes.formContainer} >
+                <Box >
+                    <Typography component='p' className={classes.modalTitle} >Month</Typography >
+                    <OutlinedInput
+                        id="outlined-adornment-weight1"
+                        defaultValue={format(new Date(selectedDate), 'MMMM')}
+                        aria-describedby="outlined-weight-helper-text"
+                        inputProps={{
+                            'aria-label': 'weight',
+                        }}
+                        margin={"dense"}
+                        labelWidth={0}
+                        className={classes.input}
+                    />
+                </Box >
+                <Box className={classes.marginInput} >
+                    <Typography component='p' className={classes.modalTitle} >Day</Typography >
+                    <OutlinedInput
+                        id="outlined-adornment-weight2"
+                        defaultValue={format(new Date(selectedDate), 'do iiii')}
+                        aria-describedby="outlined-weight-helper-text"
+                        inputProps={{
+                            'aria-label': 'weight',
+                        }}
+                        labelWidth={0}
+                        className={classes.input}
+                    />
+                </Box >
+            </div >
+        </Dialog >
     );
 });
 
