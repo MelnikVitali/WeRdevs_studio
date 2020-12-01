@@ -84,8 +84,9 @@ const useStyles = makeStyles(theme => {
             },
         },
         today: {
-            background: theme.palette.primary.main,
-            color: theme.palette.primary.contrastText
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.primary.contrastText,
+            padding: 11
         },
         'today selected': {
             color: theme.palette.primary.contrastText,

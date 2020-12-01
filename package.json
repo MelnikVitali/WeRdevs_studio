@@ -1,7 +1,14 @@
 {
-  "name": "test-task",
+  "name": "calendar",
+  "description": "WeRdevs.studio - test task",
   "version": "0.1.0",
+  "author": "Vitalii Melnyk",
+  "license": "ISC",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MelnikVitali/WeRdevs_studio"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

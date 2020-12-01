@@ -8,7 +8,9 @@ import {
     Dialog,
     IconButton,
     OutlinedInput,
-    Hidden, DialogActions, Button
+    Hidden,
+    DialogActions,
+    Button,
 } from "@material-ui/core";
 
 import CloseIcon from '@material-ui/icons/Close';
@@ -56,13 +58,15 @@ const ModalCalendar = React.memo(() => {
             aria-labelledby="responsive-dialog-title"
             className={classes.root}
         >
-            <IconButton
-                aria-label="close"
-                className={classes.closeButton}
-                onClick={() => handleClickCloseByButton(selectedDate)}
-            >
-                <CloseIcon className={classes.closeIcon} />
-            </IconButton >
+            <Hidden xsDown >
+                <IconButton
+                    aria-label="close"
+                    className={classes.closeButton}
+                    onClick={() => handleClickCloseByButton(selectedDate)}
+                >
+                    <CloseIcon className={classes.closeIcon} />
+                </IconButton >
+            </Hidden >
             <div className={classes.formContainer} >
                 <Box >
                     <Typography component='p' className={classes.modalTitle} >Month</Typography >
@@ -92,14 +96,22 @@ const ModalCalendar = React.memo(() => {
                     />
                 </Box >
             </div >
-            <DialogActions>
-                <Button onClick={handleClose} color="primary">
-                    Cancel
-                </Button>
-                <Button onClick={handleClose} color="primary">
-                    Subscribe
-                </Button>
-            </DialogActions>
+            <Hidden smUp >
+                <DialogActions >
+                    <Button
+                        className={classes.btn}
+                        onClick={() => handleClickCloseByButton(selectedDate)}
+                    >
+                        Cancel
+                    </Button >
+                    <Button
+                        className={classes.btn}
+                        onClick={handleClose}
+                    >
+                        Select
+                    </Button >
+                </DialogActions >
+            </Hidden >
         </Dialog >
     );
 });
