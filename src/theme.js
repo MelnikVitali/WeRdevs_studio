@@ -13,7 +13,7 @@ const theme = createMuiTheme({
         primary: {
             main: '#FDD000',
             contrastText: '#3D3D3D',
-            alert:'#DD4040'
+            alert: '#DD4040'
         },
         secondary: {
             main: '#272829',
@@ -28,6 +28,9 @@ const theme = createMuiTheme({
         subtitleTextGray: {
             main: '#DFDFDF'
         },
+        btnModalText: {
+            main: '#f6c314'
+        }
     },
     typography: {
         fontFamily: 'Rubik, sans-serif',
@@ -75,8 +78,8 @@ const theme = createMuiTheme({
                     fontSize: pxToRem(28)
                 }
             },
-            body1:{
-              width:'100%'
+            body1: {
+                width: '100%'
             },
             body2: {
                 [breakpoints.up("xs")]: {
@@ -118,9 +121,9 @@ const theme = createMuiTheme({
         MuiOutlinedInput: {
             root: {
                 fontWeight: "bold",
-                fontSize:16,
+                fontSize: 16,
                 borderColor: '#FDD000',
-                '&:hover':{
+                '&:hover': {
                     border: 0
                 },
                 outline: 'none'
@@ -128,10 +131,10 @@ const theme = createMuiTheme({
             input: {
                 padding: 11,
             },
-            notchedOutline:{
+            notchedOutline: {
                 borderColor: '#FDD000',
-                '&:hover':{
-                    borderColor:'yellow'
+                '&:hover': {
+                    borderColor: 'yellow'
                 }
             }
         },
@@ -141,7 +144,7 @@ const theme = createMuiTheme({
             }
         },
         MuiGridListTile: {
-            root:{
+            root: {
                 textAlign: 'center'
             },
             tile: {

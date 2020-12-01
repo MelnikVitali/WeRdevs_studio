@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { purple } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
     modalTitle: {
@@ -33,6 +34,10 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         justifyContent: 'space-around',
         margin: '30px 20px 20px'
+    },
+    btn:{
+        color: theme.palette.btnModalText.main,
+        borderRadius: 5
     }
 
 }));
