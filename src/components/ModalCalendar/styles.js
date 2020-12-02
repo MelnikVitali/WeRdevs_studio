@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-import {pxToRem} from "../../utils/pxToRem";
+import { pxToRem } from "../../utils/pxToRem";
 
 const useStyles = makeStyles(theme => ({
     modalTitle: {
@@ -36,10 +36,13 @@ const useStyles = makeStyles(theme => ({
             width: '100%'
         },
     },
-    formContainer:{
+    formContainer: {
         padding: `${pxToRem(30)} ${pxToRem(20)} ${pxToRem(20)}`
     },
-    btn:{
+    btnGroup: {
+        marginRight: pxToRem(12)
+    },
+    btn: {
         color: theme.palette.primary.contrastText,
         borderRadius: pxToRem(5)
     }

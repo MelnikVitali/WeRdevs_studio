@@ -1,12 +1,13 @@
 import React from 'react';
+import Helmet from "react-helmet";
 
 import { Grid, Typography } from '@material-ui/core';
 
 import Calendar from '../../components/Calendar/Calendar';
+
 import ModalCalendar from "../../components/ModalCalendar/ModalCalendar";
 
 import useStyles from './styles';
-import Helmet from "react-helmet";
 
 const HomePage = () => {
     const classes = useStyles();

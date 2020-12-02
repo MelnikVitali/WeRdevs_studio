@@ -89,7 +89,7 @@ const ModalCalendar = React.memo(() => {
                 </Grid >
             </Grid >
             <Hidden smUp >
-                <DialogActions >
+                <DialogActions className={classes.btnGroup} >
                     <Button
                         color='primary'
                         variant='contained'

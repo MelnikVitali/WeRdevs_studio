@@ -38,7 +38,6 @@ const Calendar = () => {
 
     const dateFormat = 'MMMM yyyy';
 
-
     const toPreviousMonth = () => {
         dispatch(setPrevMonth(subMonths(currentDate, 1)));
     };
@@ -61,86 +60,80 @@ const Calendar = () => {
         dispatch(setSelectedDate(timestamp));
     };
 
-
     const getTiles = (date) => {
         return createMonthData(date, selectedDatesArray);
     };
 
     return (
-        <div className={ classes.root }>
-            <Box className={ classes.calendar }>
-                <header className={ classes.calendarHeader }>
+        <div className={classes.root} >
+            <Box className={classes.calendar} >
+                <header className={classes.calendarHeader} >
                     <IconButton
                         aria-label="Last Month"
-                        className={ classes.headerIcon }
-                        onClick={ toPreviousMonth }
+                        className={classes.headerIcon}
+                        onClick={toPreviousMonth}
                     >
-                        <KeyboardArrowLeftIcon className={classes.colorArrow}/>
-                    </IconButton>
-                    <Typography variant="h5" className={ classes.headerText }>
-                        { format(currentDate, dateFormat) }
-                    </Typography>
+                        <KeyboardArrowLeftIcon className={classes.colorArrow} />
+                    </IconButton >
+                    <Typography variant="h5" className={classes.headerText} >
+                        {format(currentDate, dateFormat)}
+                    </Typography >
                     <IconButton
                         aria-label="Next Month"
-                        className={ classes.headerIcon }
-                        onClick={ toNextMonth }
+                        className={classes.headerIcon}
+                        onClick={toNextMonth}
                     >
-                        <KeyboardArrowRightIcon className={classes.colorArrow}/>
-                    </IconButton>
-
-                </header>
-                <Divider className={classes.line}/>
+                        <KeyboardArrowRightIcon className={classes.colorArrow} />
+                    </IconButton >
+                </header >
+                <Divider className={classes.line} />
                 <GridList
                     key="calendar"
-                    cellHeight={ 38 }
-                    cols={ 7 }
-                    spacing={ 0 }
-                    className={ classes.gridList }
+                    cellHeight={38}
+                    cols={7}
+                    spacing={0}
+                    className={classes.gridList}
                 >
-                    { getTiles(currentDate).map(week =>
+                    {getTiles(currentDate).map(week =>
                         week.map(tile => (
                             <GridListTile
-                                key={ tile.id }
-                                className={ classes.gridTile }
+                                key={tile.id}
+                                className={classes.gridTile}
                             >
                                 <div
-                                    onClick={ (event) => handleTileClick(event, tile) }
-                                    className={ [
+                                    onClick={(event) => handleTileClick(event, tile)}
+                                    className={[
                                         classes[tile.mode],
                                         classes.paper,
                                         tile.select ? classes.selected : '',
                                         tile.subtitle ? classes.today : ''
-                                    ].join(' ') }
+                                    ].join(' ')}
                                 >
-                                    { tile.title }
-                                </div>
-                            </GridListTile>
+                                    {tile.title}
+                                </div >
+                            </GridListTile >
                         ))
-                    ) }
-                </GridList>
-
-                <Divider className={classes.line}/>
-
+                    )}
+                </GridList >
+                <Divider className={classes.line} />
                 <GridList
                     key="calendar-header"
-                    cellHeight={ 40 }
-                    cols={ 7 }
-                    className={ classes.headerTile }
+                    cellHeight={40}
+                    cols={7}
+                    className={classes.headerTile}
                 >
-                    { daysArr.map((day, index) => (
-                        <GridListTile key={ index }>
+                    {daysArr.map((day, index) => (
+                        <GridListTile key={index} >
                             <Typography >
-                                { day }
-                            </Typography>
-                        </GridListTile>
-                    )) }
-                </GridList>
-                <Divider className={classes.line}/>
-
-            </Box>
-        </div>
+                                {day}
+                            </Typography >
+                        </GridListTile >
+                    ))}
+                </GridList >
+                <Divider className={classes.line} />
+            </Box >
+        </div >
     );
-
-}
+};
 
 export default Calendar;
