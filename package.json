@@ -1,7 +1,7 @@
 {
   "name": "calendar",
-  "description": "WeRdevs.studio - test task",
   "version": "0.1.0",
+  "description": "WeRdevs.studio - test task",
   "author": "Vitalii Melnyk",
   "license": "ISC",
   "private": true,

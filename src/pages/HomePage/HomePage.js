@@ -1,16 +1,21 @@
 import React from 'react';
 
-import {Grid, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
 import Calendar from '../../components/Calendar/Calendar';
 import ModalCalendar from "../../components/ModalCalendar/ModalCalendar";
 
 import useStyles from './styles';
+import Helmet from "react-helmet";
 
 const HomePage = () => {
     const classes = useStyles();
     return (
         <>
+            <Helmet >
+                <title >{'Home Page'}</title >
+            </Helmet >
+
             <Grid
                 component='section'
                 container
@@ -23,13 +28,13 @@ const HomePage = () => {
                         <br />
                         for the meeting
                     </h1 >
-                    <Typography className={classes.subtitle}>
+                    <Typography className={classes.subtitle} >
                         We encourage you to book your
                         <br />appointment online.
                         <br />This will save you time.
                     </Typography >
                 </Grid >
-                <Grid item xs={12} md={4} className={classes.calendarContainer} >
+                <Grid item xs={12} md={4} >
                     <Calendar />
                 </Grid >
             </Grid >

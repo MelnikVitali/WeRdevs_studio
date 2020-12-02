@@ -3,20 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { format } from "date-fns";
 
 import {
-    Box,
     Typography,
     Dialog,
     IconButton,
     OutlinedInput,
     Hidden,
     DialogActions,
-    Button,
+    Button, Grid,
 } from "@material-ui/core";
 
 import CloseIcon from '@material-ui/icons/Close';
-
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { useTheme } from '@material-ui/core/styles';
 
 import { toggleModal } from '../../store/actions/toggleModalActions';
 import { setSelectedDate, setSelectedDatesArray } from '../../store/actions/dateActions';
@@ -27,9 +23,6 @@ const ModalCalendar = React.memo(() => {
     const classes = useStyles();
 
     const dispatch = useDispatch();
-
-    const theme = useTheme();
-    const fullScreen = useMediaQuery(theme.breakpoints.down('xs'));
 
     const isOpenModal = useSelector(store => store.toggleModalReducer.isOpen);
     const selectedDate = useSelector(store => store.dateReducer.selectedDate);
@@ -52,7 +45,6 @@ const ModalCalendar = React.memo(() => {
 
     return (
         <Dialog
-            fullScreen={fullScreen}
             open={isOpenModal}
             onClose={handleClose}
             aria-labelledby="responsive-dialog-title"
@@ -67,8 +59,8 @@ const ModalCalendar = React.memo(() => {
                     <CloseIcon className={classes.closeIcon} />
                 </IconButton >
             </Hidden >
-            <div className={classes.formContainer} >
-                <Box >
+            <Grid container spacing={2} className={classes.formContainer} >
+                <Grid item className={classes.gridItem} >
                     <Typography component='p' className={classes.modalTitle} >Month</Typography >
                     <OutlinedInput
                         id="outlined-adornment-weight1"
@@ -77,12 +69,12 @@ const ModalCalendar = React.memo(() => {
                         inputProps={{
                             'aria-label': 'weight',
                         }}
-                        margin={"dense"}
+                        margin="dense"
                         labelWidth={0}
                         className={classes.input}
                     />
-                </Box >
-                <Box className={classes.marginInput} >
+                </Grid >
+                <Grid item className={classes.gridItem} >
                     <Typography component='p' className={classes.modalTitle} >Day</Typography >
                     <OutlinedInput
                         id="outlined-adornment-weight2"
@@ -94,17 +86,21 @@ const ModalCalendar = React.memo(() => {
                         labelWidth={0}
                         className={classes.input}
                     />
-                </Box >
-            </div >
+                </Grid >
+            </Grid >
             <Hidden smUp >
                 <DialogActions >
                     <Button
+                        color='primary'
+                        variant='contained'
                         className={classes.btn}
                         onClick={() => handleClickCloseByButton(selectedDate)}
                     >
                         Cancel
                     </Button >
                     <Button
+                        color='primary'
+                        variant='contained'
                         className={classes.btn}
                         onClick={handleClose}
                     >

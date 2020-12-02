@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Helmet from "react-helmet";
 
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 
+import Container from '@material-ui/core/Container';
 import useStyles from './styles';
 
 const NotFound = () => {
@@ -11,6 +12,10 @@ const NotFound = () => {
 
     return (
         <>
+            <Helmet >
+                <title >{'Page Not Found'}</title >
+            </Helmet >
+
             <Container component='main' maxWidth='md' className={classes.root} >
                 <Typography component='p' variant='h1' align='center' className={classes.error} >
                     404

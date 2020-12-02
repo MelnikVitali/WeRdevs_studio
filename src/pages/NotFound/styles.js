@@ -1,5 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
+import { pxToRem } from "../../utils/pxToRem";
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -10,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     },
     error: {
         marginTop: theme.spacing(8),
-        fontSize: 50,
+        fontSize: pxToRem(50),
         fontWeight: 'bold',
         color: theme.palette.primary.alert
     }

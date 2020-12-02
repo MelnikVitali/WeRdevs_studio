@@ -2,12 +2,12 @@ import * as actions from './types';
 
 export const setNextMonth = (currentDate) => ({
     type: actions.SET_NEXT_MONTH,
-    currentDate
+    payload: currentDate
 });
 
 export const setPrevMonth = (currentDate) => ({
     type: actions.SET_PREV_MONTH,
-    currentDate
+    payload: currentDate
 });
 
 export const setSelectedDate = (selected) => ({
