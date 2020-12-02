@@ -1,38 +1,32 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { pxToRem } from "../../utils/pxToRem";
 
 const useStyles = makeStyles(theme => ({
     appBar: {
         boxShadow: 'none',
-        maxWidth: 1920,
-        minWidth: 320,
+        maxWidth: pxToRem(1920),
+        minWidth: pxToRem(320),
+        minHeight: pxToRem(76),
+        flexShrink: 0,
         [theme.breakpoints.up("xs")]: {
-            height: '12vh',
-            minHeight: '12vh',
-            padding: '0 25px 0 10px',
+            padding: `${pxToRem(0)} ${pxToRem(25)} ${pxToRem(0)} ${pxToRem(15)}`,
         },
         [theme.breakpoints.up("sm")]: {
-            height: '15vh',
-            minHeight: '15vh',
-            padding: '0 55px 0 45px',
+            padding: `${pxToRem(14)} ${pxToRem(45)} ${pxToRem(14)} ${pxToRem(55)}`,
         },
         [theme.breakpoints.up("md")]: {
-            height: '17vh',
-            minHeight: '17vh',
-            padding: '0 80px 0 70px',
+            padding: `${pxToRem(18)} ${pxToRem(70)} ${pxToRem(18)} ${pxToRem(60)}`,
         },
         [theme.breakpoints.up("lg")]: {
-            height: '19vh',
-            minHeight: '19vh',
-            padding: '0 86px 0 76px',
+            padding: `${pxToRem(28)} ${pxToRem(86)} ${pxToRem(28)} ${pxToRem(76)}`,
         },
         [theme.breakpoints.up("xl")]: {
-            height: '22vh',
-            minHeight: '22vh',
             padding: '0 110px 0 100px',
         },
     },
     toolbar: {
         width: '100%',
+        height: '100%',
         padding: 0,
         display: 'flex',
         justifyContent: 'space-between',
@@ -43,27 +37,26 @@ const useStyles = makeStyles(theme => ({
     },
     logo: {
         [theme.breakpoints.up("xs")]: {
-            height: 62
+            height: pxToRem(50)
         },
         [theme.breakpoints.up("sm")]: {
-            height: 62
+            height: pxToRem(54)
         },
         [theme.breakpoints.up("md")]: {
-            height: 63
+            height: pxToRem(59)
         },
         [theme.breakpoints.up("lg")]: {
-            height: 63
+            height: pxToRem(63)
         },
         [theme.breakpoints.up("xl")]: {
-            height: 78
+            height: pxToRem(78)
         },
     },
     drawerList: {
-        width: 250
+        width: pxToRem(250)
     },
     navList: {
         display: 'flex',
-        padding: '51px 0'
     },
     navLinks: {
         position: 'relative',
@@ -73,14 +66,14 @@ const useStyles = makeStyles(theme => ({
         height: '100%',
         whiteSpace: 'nowrap',
         padding: 0,
-        marginLeft: 56,
+        marginLeft: pxToRem(56),
         color: theme.palette.primary.contrastText,
-        fontSize: '28px',
+        fontSize: pxToRem(28),
         fontWeight: 500,
         textTransform: 'uppercase',
-        letterSpacing: '0.56px',
+        letterSpacing: pxToRem(0.56),
         "&:first-child": {
-            marginLeft: '20px',
+            marginLeft: pxToRem(20),
         },
     },
     active: {
@@ -92,12 +85,15 @@ const useStyles = makeStyles(theme => ({
             transform: 'translate(-50%, -50%)',
             content: '""',
             display: 'block',
-            width: '14px',
-            height: '14px',
-            borderRadius: '7px',
+            width: pxToRem(14),
+            height: pxToRem(14),
+            borderRadius: pxToRem(7),
             backgroundColor: theme.palette.primary.main,
         }
     },
+    icon:{
+        color: theme.palette.primary.main
+    }
 }));
 
 export default useStyles;

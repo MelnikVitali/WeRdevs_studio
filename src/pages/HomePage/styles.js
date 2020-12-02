@@ -1,15 +1,17 @@
 import { makeStyles } from "@material-ui/core";
 
+import { pxToRem } from "../../utils/pxToRem";
+
 import bgImage from "../../assets/bgImage.jpg";
 
 const useStyles = makeStyles(theme => ({
     root: {
-        flexGrow: 1,
+        maxWidth: pxToRem(1920),
+        minWidth: pxToRem(330),
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'flex-end',
-        maxWidth: 1920,
-        minWidth: 320,
+        flexGrow: 1,
         backgroundImage: `url(${bgImage})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
@@ -18,45 +20,49 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        marginBottom: '100px',
         textAlign: 'right',
-        paddingRight: '3%',
-        [theme.breakpoints.up("xs")]: {
-            marginTop: 0
+        paddingRight: pxToRem(25),
+        [theme.breakpoints.only("xs")]: {
+            marginTop: 0,
+            marginBottom: 0
         },
-        [theme.breakpoints.up("md")]: {
-            marginTop: 92
+        [theme.breakpoints.only("sm")]: {
+            marginBottom: `${pxToRem(10)} !important`,
         },
         [theme.breakpoints.up("lg")]: {
-            marginTop: 84
+            marginTop: pxToRem(84)
         },
         [theme.breakpoints.up("xl")]: {
-            marginTop: 160
+            marginTop: pxToRem(160)
         },
     },
     title: {
         color: theme.palette.primary.main,
         textTransform: 'uppercase',
-        fontSize: 40,
-        letterSpacing: '2.2px',
+        fontSize: pxToRem(40),
+        letterSpacing: pxToRem(2.2),
         [theme.breakpoints.only("xs")]: {
-            letterSpacing: '1px',
-            fontSize: 32,
+            letterSpacing: pxToRem(1),
+            fontSize: pxToRem(30),
+        },
+        [theme.breakpoints.only("sm")]: {
+            letterSpacing: pxToRem(1.5),
+            fontSize: pxToRem(34),
         },
     },
     subtitle: {
-        width: '100%',
-        fontSize: 22,
+        fontSize: pxToRem(22),
         fontWeight: 300,
-        letterSpacing: '0.6px',
+        letterSpacing: pxToRem(0.6),
         color: theme.palette.subtitleTextGray.main,
         [theme.breakpoints.only("xs")]: {
-            letterSpacing: 0.3,
-            fontSize: 16,
+            letterSpacing: pxToRem(0.3),
+            fontSize: pxToRem(16),
         },
-    },
-    calendarContainer: {
-        width: '40%'
+        [theme.breakpoints.only("sm")]: {
+            letterSpacing: pxToRem(0.4),
+            fontSize: pxToRem(18),
+        },
     }
 }));
 

@@ -1,18 +1,19 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { purple } from '@material-ui/core/colors';
+
+import {pxToRem} from "../../utils/pxToRem";
 
 const useStyles = makeStyles(theme => ({
     modalTitle: {
         color: theme.palette.liteGray.main,
-        fontSize: 16,
-        letterSpacing: '-0.4px',
+        fontSize: pxToRem(16),
+        letterSpacing: pxToRem(-0.4),
         fontWeight: 450
     },
     closeButton: {
         position: 'absolute',
         right: 0,
         top: 0,
-        padding: 4,
+        padding: pxToRem(4),
         backgroundColor: theme.palette.primary.main,
         '&:hover': {
             backgroundColor: theme.palette.primary.main,
@@ -21,23 +22,26 @@ const useStyles = makeStyles(theme => ({
         borderRadius: 0,
     },
     closeIcon: {
-        fontSize: 20
+        fontSize: pxToRem(20)
     },
     input: {
-        fontSize: 16,
-        fontWeight: "bold",
+        fontSize: pxToRem(16),
+        fontWeight: 550,
+        [theme.breakpoints.down("xs")]: {
+            width: '100%'
+        },
     },
-    marginInput: {
-        marginLeft: 20
+    gridItem: {
+        [theme.breakpoints.down("xs")]: {
+            width: '100%'
+        },
     },
     formContainer:{
-        display: 'flex',
-        justifyContent: 'space-around',
-        margin: '30px 20px 20px'
+        padding: `${pxToRem(30)} ${pxToRem(20)} ${pxToRem(20)}`
     },
     btn:{
-        color: theme.palette.btnModalText.main,
-        borderRadius: 5
+        color: theme.palette.primary.contrastText,
+        borderRadius: pxToRem(5)
     }
 
 }));

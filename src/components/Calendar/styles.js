@@ -1,29 +1,31 @@
 import { makeStyles } from '@material-ui/core/styles';
 import indigo from '@material-ui/core/colors/indigo';
 
+import { pxToRem } from "../../utils/pxToRem";
+
 const useStyles = makeStyles(theme => {
     return ({
         root: {
-            overflow: 'unset',
+            width: '100%',
+            height: '100%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: '100%',
-            height: '100%',
+            overflow: 'unset',
             boxSizing: 'border-box',
             backgroundColor: theme.palette.secondary.main,
-            fontSize: 14,
+            fontSize: pxToRem(14),
             fontWeight: 400,
             letterSpacing: 0,
             color: theme.palette.subtitleTextGray.main
         },
         calendar: {
+            width: '100%',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            width: '100%',
-            maxWidth: 467,
+            maxWidth: pxToRem(467),
             margin: '3% 10%',
             color: theme.palette.subtitleTextGray
         },
@@ -31,14 +33,15 @@ const useStyles = makeStyles(theme => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            width: '93%',
+            width: '100%',
+            padding: '0 4%',
             backgroundColor: theme.palette.secondary.main,
         },
         headerText: {
-            fontSize: 15,
+            fontSize: pxToRem(15),
             textTransform: 'uppercase',
-            letterSpacing: '1.2px',
-            wordSpacing: '8px',
+            letterSpacing: pxToRem(1.2),
+            wordSpacing: pxToRem(8),
         },
         headerTile: {
             width: '100%',
@@ -46,7 +49,7 @@ const useStyles = makeStyles(theme => {
             justifyContent: 'center',
             textAlign: 'center',
             overflow: 'hidden',
-            fontSize: 15,
+            fontSize: pxToRem(15),
         },
         headerIcon: {
             color: theme.palette.secondary.contrastText,
@@ -55,15 +58,14 @@ const useStyles = makeStyles(theme => {
         gridList: {
             width: '100%',
             height: '100%',
-            margin: '10px !important',
+            margin: `${pxToRem(10)} !important`,
             backgroundColor: theme.palette.secondary.main,
         },
         gridTile: {
             display: 'flex',
             position: 'relative',
             textAlign: 'center',
-            justifyContent: 'center !important',
-
+            justifyContent: 'center',
         },
         gridDays: {
             display: 'flex',
@@ -73,27 +75,26 @@ const useStyles = makeStyles(theme => {
             color: `${theme.palette.primary.main}`,
             '&::before': {
                 position: 'absolute',
-                top: '78%',
-                left: 'calc(50% - 3px)',
+                top: pxToRem(30),
                 content: '""',
                 display: 'block',
-                width: '6px',
-                height: '6px',
-                borderRadius: '3px',
+                width: pxToRem(6),
+                height: pxToRem(6),
+                borderRadius: pxToRem(3),
                 backgroundColor: theme.palette.primary.main,
             },
         },
         today: {
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.primary.contrastText,
-            padding: 11
+            padding: pxToRem(11)
         },
         'today selected': {
             color: theme.palette.primary.contrastText,
         },
         paper: {
             display: 'flex',
-            padding: 11,
+            padding: pxToRem(11),
             justifyContent: 'center',
             textAlign: 'center',
             fontWeight: 400,
@@ -112,7 +113,7 @@ const useStyles = makeStyles(theme => {
         line: {
             width: '90%',
             backgroundColor: theme.palette.disabledDate.main,
-            margin: '8px 0'
+            margin: `${pxToRem(8)} 0`,
         },
         colorArrow: {
             color: theme.palette.subtitleTextGray.main

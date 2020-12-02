@@ -1,9 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
 
-const pxToRem = (value) => {
-    return `${value / 16}rem`;
-};
+import { pxToRem } from "./utils/pxToRem";
 
 // Generate breakpoints so we can use them in the theme definition
 const breakpoints = createBreakpoints({});
@@ -37,7 +35,7 @@ const theme = createMuiTheme({
         body2: {
             fontSize: pxToRem(20),
             fontWeight: 300,
-            letterSpacing: '0.4px',
+            letterSpacing: pxToRem(0.4),
         },
     },
     shape: {
@@ -55,7 +53,7 @@ const theme = createMuiTheme({
                 '#root': {
                     display: 'flex',
                     flexDirection: 'column',
-                    height: '100vh',
+                    height: '100%',
                     width: '100%'
                 },
             },
@@ -63,16 +61,16 @@ const theme = createMuiTheme({
         MuiTypography: {
             button: {
                 [breakpoints.up("xs")]: {
-                    fontSize: pxToRem(12)
-                },
-                [breakpoints.up("sm")]: {
                     fontSize: pxToRem(16)
                 },
+                [breakpoints.up("sm")]: {
+                    fontSize: pxToRem(19)
+                },
                 [breakpoints.up("md")]: {
-                    fontSize: pxToRem(20)
+                    fontSize: pxToRem(22)
                 },
                 [breakpoints.up("lg")]: {
-                    fontSize: pxToRem(24)
+                    fontSize: pxToRem(25)
                 },
                 [breakpoints.up("xl")]: {
                     fontSize: pxToRem(28)
@@ -86,10 +84,10 @@ const theme = createMuiTheme({
                     fontSize: pxToRem(12),
                 },
                 [breakpoints.up("sm")]: {
-                    fontSize: pxToRem(12)
+                    fontSize: pxToRem(13)
                 },
                 [breakpoints.up("md")]: {
-                    fontSize: pxToRem(14)
+                    fontSize: pxToRem(15)
                 },
                 [breakpoints.up("lg")]: {
                     fontSize: pxToRem(16),
@@ -108,7 +106,6 @@ const theme = createMuiTheme({
                 },
                 [breakpoints.up("md")]: {
                     fontSize: pxToRem(14)
-
                 },
                 [breakpoints.up("lg")]: {
                     fontSize: pxToRem(28),
@@ -121,7 +118,7 @@ const theme = createMuiTheme({
         MuiOutlinedInput: {
             root: {
                 fontWeight: "bold",
-                fontSize: 16,
+                fontSize: pxToRem(16),
                 borderColor: '#FDD000',
                 '&:hover': {
                     border: 0
@@ -151,6 +148,12 @@ const theme = createMuiTheme({
                 display: 'flex',
                 alignItems: 'center',
                 textAlign: 'center'
+            }
+        },
+        MuiDialog: {
+            paper: {
+                overflowX: 'hidden',
+                overflowY: 'hidden'
             }
         },
     },

@@ -1,52 +1,47 @@
 import { makeStyles } from '@material-ui/core/styles';
 
+import {pxToRem} from "../../utils/pxToRem";
+
 const useStyles = makeStyles(theme => ({
     root: {
-        flexGrow: 1,
-        maxWidth: 1336,
-        minWidth: 320,
-        margin: '0 auto',
+        // maxWidth: pxToRem(1150),
+        width:'100%',
+        minWidth: pxToRem(320),
         [theme.breakpoints.up("xs")]: {
-            width: '90vw',
-            paddingTop: 5,
+            paddingTop: pxToRem(5),
+            letterSpacing: pxToRem(0.4),
         },
         [theme.breakpoints.up("sm")]: {
-            width: '80vw',
-            paddingTop: 10,
-        },
-        [theme.breakpoints.up("lg")]: {
-            width: '74vw',
-            paddingTop: 24,
-            letterSpacing: 0.4,
+            paddingTop: pxToRem(10),
         },
         [theme.breakpoints.up("xl")]: {
-            width: '70vw',
-            paddingTop: 34,
-            letterSpacing: 0.4,
+            paddingTop: pxToRem(34),
+            letterSpacing: pxToRem(0.4),
         },
+    },
+    gridItem:{
+        padding: `${pxToRem(0)} ${pxToRem(12)}`
     },
     title: {
         fontWeight: 'bold',
         color: theme.palette.primary.contrastText,
-        letterSpacing: '-0.68px',
+        letterSpacing: pxToRem(-0.68),
         [theme.breakpoints.down("xs")]: {
-            fontSize: 20
+            fontSize: pxToRem(20)
         },
         [theme.breakpoints.up("sm")]: {
-            paddingBottom: 15,
-            fontSize: 24
+            paddingBottom: pxToRem(15),
+            fontSize: pxToRem(24)
         },
         [theme.breakpoints.up("md")]: {
-            paddingBottom: 20,
-            fontSize: 26
+            paddingBottom: pxToRem(20),
+            fontSize: pxToRem(26)
         },
         [theme.breakpoints.up("lg")]: {
-            paddingBottom: 30,
-            fontSize: 28
+            fontSize: pxToRem(28)
         },
         [theme.breakpoints.up("xl")]: {
-            paddingBottom: 50,
-            fontSize: 34
+            fontSize: pxToRem(34)
         },
     }
 }));

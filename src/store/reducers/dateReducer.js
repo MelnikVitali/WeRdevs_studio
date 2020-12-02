@@ -4,22 +4,21 @@ const initialState = {
     isOpen: false,
     currentDate: (new Date()),
     selectedDate: null,
-    selectedDatesArray:[]
+    selectedDatesArray: []
 };
 
 export default (state = initialState, action) => {
     switch (action.type) {
-
         case actions.SET_NEXT_MONTH:
             return {
                 ...state,
-                currentDate: action.currentDate
+                currentDate: action.payload
             };
 
         case actions.SET_PREV_MONTH:
             return {
                 ...state,
-                currentDate: action.currentDate
+                currentDate: action.payload
             };
 
         case actions.SET_SELECTED_DATE:
@@ -32,7 +31,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 selectedDatesArray: action.payload
-            }
+            };
 
         default:
             return state;
