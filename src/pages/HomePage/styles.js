@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 import { pxToRem } from "../../utils/pxToRem";
 
-import bgImage from "../../assets/bgImage.webp";
+import bgImage from "../../assets/bgImage.jpg";
 
 const useStyles = makeStyles(theme => ({
     root: {
