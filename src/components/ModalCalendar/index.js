@@ -1,1 +1,1 @@
-export {default} from './ModalCalendar';
+export { default } from './ModalCalendar';

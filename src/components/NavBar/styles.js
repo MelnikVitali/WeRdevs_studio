@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
             padding: `${pxToRem(28)} ${pxToRem(86)} ${pxToRem(28)} ${pxToRem(76)}`,
         },
         [theme.breakpoints.up("xl")]: {
-            padding: '0 110px 0 100px',
+            padding: `${pxToRem(33)} ${pxToRem(110)} ${pxToRem(33)} ${pxToRem(100)}`,
         },
     },
     toolbar: {
@@ -91,7 +91,7 @@ const useStyles = makeStyles(theme => ({
             backgroundColor: theme.palette.primary.main,
         }
     },
-    icon:{
+    icon: {
         color: theme.palette.primary.main
     }
 }));

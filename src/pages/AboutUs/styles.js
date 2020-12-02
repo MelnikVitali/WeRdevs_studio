@@ -1,11 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-import {pxToRem} from "../../utils/pxToRem";
+import { pxToRem } from "../../utils/pxToRem";
 
 const useStyles = makeStyles(theme => ({
     root: {
-        // maxWidth: pxToRem(1150),
-        width:'100%',
+        width: '100%',
         minWidth: pxToRem(320),
         [theme.breakpoints.up("xs")]: {
             paddingTop: pxToRem(5),
@@ -19,7 +18,7 @@ const useStyles = makeStyles(theme => ({
             letterSpacing: pxToRem(0.4),
         },
     },
-    gridItem:{
+    gridItem: {
         padding: `${pxToRem(0)} ${pxToRem(12)}`
     },
     title: {

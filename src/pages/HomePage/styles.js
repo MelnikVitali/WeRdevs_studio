@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 import { pxToRem } from "../../utils/pxToRem";
 
-import bgImage from "../../assets/bgImage.jpg";
+import bgImage from "../../assets/bgImage.png";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -29,11 +29,14 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.only("sm")]: {
             marginBottom: `${pxToRem(10)} !important`,
         },
+        [theme.breakpoints.only("md")]: {
+            marginTop: pxToRem(98),
+        },
         [theme.breakpoints.up("lg")]: {
-            marginTop: pxToRem(84)
+            marginTop: pxToRem(86)
         },
         [theme.breakpoints.up("xl")]: {
-            marginTop: pxToRem(160)
+            marginTop: pxToRem(194)
         },
     },
     title: {
