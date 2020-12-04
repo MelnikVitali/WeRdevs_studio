@@ -77,7 +77,7 @@ const useStyles = makeStyles(theme => ({
         },
     },
     active: {
-        '&::before': {
+        '&::after': {
             position: 'absolute',
             top: '115%',
             left: '50%',
