@@ -6,6 +6,7 @@ const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
         minWidth: pxToRem(320),
+        marginBottom: pxToRem(20),
         [theme.breakpoints.up("xs")]: {
             paddingTop: pxToRem(5),
             letterSpacing: pxToRem(0.4),
