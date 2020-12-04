@@ -73,7 +73,7 @@ const useStyles = makeStyles(theme => {
         },
         selected: {
             color: `${theme.palette.primary.main}`,
-            '&::before': {
+            '&::after': {
                 position: 'absolute',
                 top: pxToRem(30),
                 content: '""',
