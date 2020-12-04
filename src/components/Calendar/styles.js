@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import indigo from '@material-ui/core/colors/indigo';
 
 import { pxToRem } from "../../utils/pxToRem";
 
@@ -98,17 +97,11 @@ const useStyles = makeStyles(theme => {
             justifyContent: 'center',
             textAlign: 'center',
             fontWeight: 400,
-            '&:hover': {
-                background: indigo[100]
-            },
             cursor: 'pointer',
         },
         disabled: {
             color: theme.palette.disabledDate.main,
             fontWeight: 500,
-            '&:hover': {
-                background: indigo[100]
-            },
         },
         line: {
             width: '90%',

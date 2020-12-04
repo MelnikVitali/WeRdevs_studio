@@ -1,5 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
+import indigo from "@material-ui/core/colors/indigo";
 
 import { pxToRem } from "./utils/pxToRem";
 
@@ -131,7 +132,7 @@ const theme = createMuiTheme({
             notchedOutline: {
                 borderColor: '#FDD000',
                 '&:hover': {
-                    borderColor: 'yellow'
+                    borderColor: '#FDD000'
                 }
             }
         },
@@ -142,7 +143,10 @@ const theme = createMuiTheme({
         },
         MuiGridListTile: {
             root: {
-                textAlign: 'center'
+                textAlign: 'center',
+                '&:hover': {
+                    backgroundColor: indigo[100]
+                }
             },
             tile: {
                 display: 'flex',
