@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
             marginBottom: 0
         },
         [theme.breakpoints.only("sm")]: {
-            marginBottom: `${pxToRem(10)} !important`,
+            marginBottom: `${pxToRem(20)}`,
         },
         [theme.breakpoints.only("md")]: {
             marginTop: pxToRem(98),
@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
             marginTop: pxToRem(86)
         },
         [theme.breakpoints.up("xl")]: {
-            marginTop: pxToRem(194)
+            marginTop: pxToRem(176)
         },
     },
     title: {

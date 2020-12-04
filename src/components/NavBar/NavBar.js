@@ -57,7 +57,7 @@ const NavBar = (props) => {
                         to={path}
                         key={title}
                     >
-                        <ListItemIcon className={classes.icon}>
+                        <ListItemIcon className={classes.icon} >
                             {index % 2 === 0 ? <HomeIcon /> : <SupervisorAccountIcon />}
                         </ListItemIcon >
                         <ListItemText primary={title} />
