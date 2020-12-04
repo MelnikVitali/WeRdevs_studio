@@ -1,6 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
-import indigo from "@material-ui/core/colors/indigo";
 
 import { pxToRem } from "./utils/pxToRem";
 
@@ -144,15 +143,14 @@ const theme = createMuiTheme({
         MuiGridListTile: {
             root: {
                 textAlign: 'center',
-                '&:hover': {
-                    backgroundColor: indigo[100]
-                }
+
             },
             tile: {
                 display: 'flex',
                 alignItems: 'center',
-                textAlign: 'center'
-            }
+                textAlign: 'center',
+                justifyContent:'center',
+            },
         },
         MuiDialog: {
             paper: {

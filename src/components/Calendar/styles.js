@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 import { pxToRem } from "../../utils/pxToRem";
+import indigo from "@material-ui/core/colors/indigo";
 
 const useStyles = makeStyles(theme => {
     return ({
@@ -20,20 +21,20 @@ const useStyles = makeStyles(theme => {
         },
         calendar: {
             width: '100%',
+            maxWidth: pxToRem(467),
             display: 'flex',
+            margin: '3% 10%',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            maxWidth: pxToRem(467),
-            margin: '3% 10%',
             color: theme.palette.subtitleTextGray
         },
         calendarHeader: {
+            width: '100%',
+            padding: '0 4%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            width: '100%',
-            padding: '0 4%',
             backgroundColor: theme.palette.secondary.main,
         },
         headerText: {
@@ -57,7 +58,6 @@ const useStyles = makeStyles(theme => {
         gridList: {
             width: '100%',
             height: '100%',
-            margin: `${pxToRem(10)} !important`,
             backgroundColor: theme.palette.secondary.main,
         },
         gridTile: {
@@ -74,7 +74,7 @@ const useStyles = makeStyles(theme => {
             color: `${theme.palette.primary.main}`,
             '&::after': {
                 position: 'absolute',
-                top: pxToRem(30),
+                bottom: pxToRem(3),
                 content: '""',
                 display: 'block',
                 width: pxToRem(6),
@@ -84,20 +84,25 @@ const useStyles = makeStyles(theme => {
             },
         },
         today: {
+            padding: `${pxToRem(11)} 0`,
             backgroundColor: theme.palette.primary.main,
-            color: theme.palette.primary.contrastText,
-            padding: pxToRem(11)
+            color: theme.palette.primary.contrastText
         },
         'today selected': {
             color: theme.palette.primary.contrastText,
         },
         paper: {
+            width: pxToRem(39),
+            height: '100%',
             display: 'flex',
-            padding: pxToRem(11),
             justifyContent: 'center',
+            alignItems: 'center',
             textAlign: 'center',
             fontWeight: 400,
             cursor: 'pointer',
+            '&:hover': {
+                backgroundColor: indigo[100]
+            }
         },
         disabled: {
             color: theme.palette.disabledDate.main,

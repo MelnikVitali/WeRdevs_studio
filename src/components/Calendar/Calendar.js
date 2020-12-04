@@ -89,9 +89,8 @@ const Calendar = () => {
                 <Divider className={classes.line} />
                 <GridList
                     key="calendar"
-                    cellHeight={38}
+                    cellHeight={39}
                     cols={7}
-                    spacing={0}
                     className={classes.gridList}
                 >
                     {getTiles(currentDate).map(week =>
