@@ -2,8 +2,8 @@
 
 .idea
 *.log
-.package-lock.json
-.yarn.lock
+package-lock.json
+yarn.lock
 # dependencies
 /node_modules
 /.pnp
